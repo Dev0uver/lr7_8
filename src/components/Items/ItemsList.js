@@ -1,5 +1,6 @@
 import React from 'react';
 import useServerGoods from './useServerGoods';
+import { Link } from 'react-router-dom';
 
 const ItemsList = () => {
   const { goods, isLoading, error, loadMore } = useServerGoods();
@@ -27,6 +28,8 @@ const ItemsList = () => {
       {error && <p>Ошибка соединения</p>}
       {isLoading && <p>Загрузка...</p>}
       <button onClick={loadMore}>Загрузить больше</button>
+      <br></br>
+      <Link to="/">Перейти на главную страницу</Link>
     </div>
   );
 };
